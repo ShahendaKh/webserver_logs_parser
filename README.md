@@ -12,10 +12,13 @@ Check out code, navigate to project's directory then execute:
 ## Usage
 
 To run the script, you need to execute:
+
     $ ruby logs_parser.rb webserver.log
 
 To run rubocop linter, you need to execute:
+
     $ rake rubocop  
 
 To run tests, you need to execute:
+
     $ rake spec   
