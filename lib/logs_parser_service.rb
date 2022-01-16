@@ -14,14 +14,11 @@ class LogsParserService
     @visits_storage = VisitsStorage.new
   end
 
-  def perform
-    log_file_lines.each_with_index do |line, row_index|
-      splitted_line = line.split(' ')
-      next unless validate_line(splitted_line, row_index)
+  def parse
+    return if log_file_lines.nil?
 
-      visited_url = splitted_line[0]
-      visitor_ip = splitted_line[1]
-      visits_storage.add_visit(visited_url, visitor_ip)
+    log_file_lines.each_with_index do |line, row_index|
+      next unless parse_line(line, row_index)
     end
     LogsInsightsService.new(visits_storage).show_insights
   end
@@ -36,5 +33,14 @@ class LogsParserService
       puts "Extra values in row ##{row_index} are ignored"
     end
     true
+  end
+
+  def parse_line(line, row_index)
+    splitted_line = line.split(' ')
+    return false unless validate_line(splitted_line, row_index)
+
+    visited_url = splitted_line[0]
+    visitor_ip = splitted_line[1]
+    visits_storage.add_visit(visited_url, visitor_ip)
   end
 end

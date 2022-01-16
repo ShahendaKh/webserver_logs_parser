@@ -5,11 +5,19 @@ class FileLoaderService
   attr_reader :log_file_lines
 
   def initialize(file_name)
-    file_path = File.expand_path("../../data/#{file_name}", __FILE__)
+    file_path = get_file_path(file_name)
     begin
       @log_file_lines = File.readlines(file_path)
     rescue Errno::ENOENT
-      puts 'Log file could not be found'
+      puts 'ERROR: Log file could not be found'
     end
+  end
+
+  private
+
+  def get_file_path(file_name)
+    file_path = File.expand_path("../../data/#{file_name}", __FILE__)
+
+    File.exist?(file_path) ? file_path : file_name
   end
 end
