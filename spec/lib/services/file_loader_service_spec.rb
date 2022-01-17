@@ -2,6 +2,7 @@
 
 require 'spec_helper'
 require_relative '../../../lib/services/file_loader_service'
+
 RSpec.describe 'File loader service' do
   describe 'Load file line by line' do
     context 'Given a file name that exists in the data folder' do

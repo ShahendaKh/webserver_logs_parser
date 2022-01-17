@@ -25,9 +25,11 @@ def example_one_output
   <<~INFO
     total urls visited: 2
     total visits count: 3
+
     visits sorted by visits count:
     /home visited 2 times by 2 unique visitors
     /about visited 1 times by 1 unique visitors
+
     visits sorted by unique visitors:
     /home visited 2 times by 2 unique visitors
     /about visited 1 times by 1 unique visitors
@@ -38,7 +40,9 @@ def example_two_output
   <<~INFO
     total urls visited: 0
     total visits count: 0
+
     visits sorted by visits count:
+
     visits sorted by unique visitors:
   INFO
 end

@@ -9,7 +9,6 @@ class LogsInsightsService
   end
 
   def show_insights
-    puts "\n"
     puts "total urls visited: #{visits_storage.total_urls_visited}"
     puts "total visits count: #{visits_storage.total_visits_count}"
     puts "\n"

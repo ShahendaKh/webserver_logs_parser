@@ -2,6 +2,7 @@
 
 require 'spec_helper'
 require_relative '../../lib/visits_storage'
+
 RSpec.describe 'Visits storage' do
   describe 'Store log file information as key: url and value: UrlVisit' do
     context 'Create empty visits storage' do

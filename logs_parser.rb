@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require_relative 'lib/logs_parser_service'
+require_relative 'lib/services/logs_parser_service'
 
 script_arguments = ARGV
 if script_arguments.empty?

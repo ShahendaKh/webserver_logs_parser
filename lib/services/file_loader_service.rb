@@ -16,7 +16,7 @@ class FileLoaderService
   private
 
   def get_file_path(file_name)
-    file_path = File.expand_path("../../data/#{file_name}", __FILE__)
+    file_path = File.expand_path("../../../data/#{file_name}", __FILE__)
 
     File.exist?(file_path) ? file_path : file_name
   end
